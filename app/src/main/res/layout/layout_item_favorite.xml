@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moviePosterImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_star_24"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"/>
+
+          <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/titleText"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              tools:text="title"
+              app:layout_constraintStart_toEndOf="@id/moviePosterImage"
+              app:layout_constraintTop_toTopOf="parent"
+              android:layout_margin="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/voteAverageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="vote average"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
