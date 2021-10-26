@@ -28,6 +28,7 @@
               tools:text="title"
               app:layout_constraintStart_toEndOf="@id/moviePosterImage"
               app:layout_constraintTop_toTopOf="parent"
+              android:textStyle="bold"
               android:layout_margin="10dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -37,7 +38,8 @@
             tools:text="vote average"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:textStyle="bold"/>
 
 
 
