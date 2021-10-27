@@ -20,7 +20,7 @@
           app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titleText"
+            android:id="@+id/detailTitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="title"
@@ -34,13 +34,13 @@
             android:id="@+id/startImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/titleText"
-            app:layout_constraintBottom_toBottomOf="@id/titleText"
+            app:layout_constraintTop_toTopOf="@id/detailTitleText"
+            app:layout_constraintBottom_toBottomOf="@id/detailTitleText"
             app:layout_constraintEnd_toEndOf="parent"
             android:padding="10dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/runningtimeText"
+            android:id="@+id/detailRunningtimeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="running time"
@@ -51,11 +51,11 @@
             android:textStyle="bold"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/overviewText"
+            android:id="@+id/detailOverviewText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Overview"
-            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintTop_toBottomOf="@id/detailTitleText"
             android:layout_margin="10dp"
             app:layout_constraintStart_toStartOf="parent"
             android:textStyle="bold"/>
@@ -64,7 +64,7 @@
             android:id="@+id/reviewText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/overviewText"
+            app:layout_constraintTop_toBottomOf="@id/detailOverviewText"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"/>
 

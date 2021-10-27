@@ -1,6 +1,7 @@
 package com.soomgo.movieinfoapplication.data.dto
 
 import android.os.Parcelable
+import com.soomgo.movieinfoapplication.domain.model.Movie
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -27,3 +28,18 @@ data class MovieDto(
     val vote_count: Int,
     val is_favorite : Boolean
 ) : Parcelable
+
+fun MovieDto.toMovie() = Movie(
+    id = id,
+    adult = adult,
+    original_language = original_language,
+    original_title = original_title,
+    overview = overview,
+    popularity = popularity,
+    poster_path = poster_path,
+    release_date = release_date,
+    title = title,
+    video = video,
+    vote_average = vote_average,
+    vote_count = vote_count,
+ )

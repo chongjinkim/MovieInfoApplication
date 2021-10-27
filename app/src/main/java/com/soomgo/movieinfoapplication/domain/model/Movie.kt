@@ -10,6 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Movie(
     @PrimaryKey val id: Int,
+    val adult: Boolean,
     val original_language: String,
     val original_title: String,
     val overview: String,

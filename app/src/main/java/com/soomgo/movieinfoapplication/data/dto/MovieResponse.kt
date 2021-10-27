@@ -1,5 +1,7 @@
 package com.soomgo.movieinfoapplication.data.dto
 
+import com.soomgo.movieinfoapplication.domain.model.MovieDetail
+
 
 data class MovieResponse(
     val page : Int,
@@ -11,7 +13,7 @@ data class MovieResponse(
 data class UpcomingResponse(
     val dates: Dates,
     val page: Int,
-    val results: List<Result>,
+    val results: List<MovieDto>,
     val total_pages: Int,
     val total_results: Int
 )
@@ -43,3 +45,33 @@ data class DetailResponse(
     val vote_average: Double,
     val vote_count: Int
 )
+
+fun DetailResponse.toMovieDetail() : MovieDetail = MovieDetail(
+
+    adult = adult,
+    backdrop_path = backdrop_path,
+    belongs_to_collection = belongs_to_collection,
+    budget = budget,
+    genres = genres,
+    homepage = homepage,
+    id = id,
+    imdb_id = imdb_id,
+    original_language = original_language,
+    original_title = original_title,
+    overview = overview,
+    popularity = popularity,
+    poster_path = poster_path,
+    production_companies = production_companies,
+    production_countries = production_countries,
+    release_date = release_date,
+    revenue = revenue,
+    runtime = runtime,
+    spoken_languages = spoken_languages,
+    status = status,
+    tagline = tagline,
+    title = title,
+    video = video,
+    vote_average = vote_average,
+    vote_count= vote_count
+)
+
