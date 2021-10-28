@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="movieDetail"
+            type="com.soomgo.movieinfoapplication.domain.model.MovieDetail"/>
 
+        <variable
+            name="isFavorite"
+            type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +23,8 @@
           android:layout_height="200dp"
           android:src="@drawable/ic_baseline_movie_filter_24"
           app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintStart_toStartOf="parent"/>
+          app:layout_constraintStart_toStartOf="parent"
+          android:setImageUrl="@{movieDetail.poster_path}"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/detailTitleText"
@@ -28,7 +35,8 @@
             app:layout_constraintTop_toBottomOf="@id/detailImage"
             android:layout_margin="10dp"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{movieDetail.title}"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/startImage"
@@ -37,7 +45,8 @@
             app:layout_constraintTop_toTopOf="@id/detailTitleText"
             app:layout_constraintBottom_toBottomOf="@id/detailTitleText"
             app:layout_constraintEnd_toEndOf="parent"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:setFavoriteMovie="@{isFavorite}"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/detailRunningtimeText"
@@ -47,8 +56,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detailImage"
             android:layout_margin="10dp"
-            android:text="15sp"
-            android:textStyle="bold"/>
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@{movieDetail.runtime}"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/detailOverviewText"
@@ -66,7 +77,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/detailOverviewText"
             android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{movieDetail.overview}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
