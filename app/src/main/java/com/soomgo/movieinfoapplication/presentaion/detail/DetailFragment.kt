@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.soomgo.movieinfoapplication.BR
 import com.soomgo.movieinfoapplication.common.KEY_DETAIL
 import com.soomgo.movieinfoapplication.databinding.LayoutDetailFragmentBinding
 import com.soomgo.movieinfoapplication.domain.model.Movie
@@ -27,7 +27,7 @@ class DetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = LayoutDetailFragmentBinding.inflate(inflater, container, false).apply {
-        lifecycleOwner = this@DetailFragment
+        lifecycleOwner = viewLifecycleOwner
         binding = this
     }.root
 
@@ -43,7 +43,7 @@ class DetailFragment : Fragment() {
             viewModel.fetchDetail(it)
         }
 
-        binding.detailImage.setOnClickListener {
+        binding.startImage.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.updateMovie(movie)
             }

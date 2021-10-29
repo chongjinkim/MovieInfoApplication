@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.soomgo.movieinfoapplication.domain.model.Movie
 
 
-@Database(entities = [Movie::class], version = 1)
+@Database(entities = [Movie::class], version = 2)
 
 abstract class MovieDatabase : RoomDatabase() {
 

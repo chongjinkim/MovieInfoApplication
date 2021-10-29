@@ -46,16 +46,17 @@ class MovieFragment : Fragment() {
     }
 
     private fun observe(){
-        viewModel.upcomingMovies.observe(viewLifecycleOwner){
-            upComingAdapter.submitList(it)
-        }
 
-        viewModel.popularMovies.observe(viewLifecycleOwner){
+       viewModel.popularMovies.observe(viewLifecycleOwner){
             popularAdapter.submitList(it)
         }
 
         viewModel.topRatedMovies.observe(viewLifecycleOwner){
             topRatedAdapter.submitList(it)
+        }
+
+        viewModel.upcomingMovies.observe(viewLifecycleOwner){
+            upComingAdapter.submitList(it)
         }
     }
 
@@ -82,8 +83,7 @@ class MovieFragment : Fragment() {
 
 
 fun movieClickListener(activity: FragmentActivity) : (Movie) -> Unit =
-    {
-            movie ->
+    { movie ->
         val fragment = DetailFragment().apply {
             arguments = Bundle().apply {
                 putParcelable(KEY_DETAIL, movie)

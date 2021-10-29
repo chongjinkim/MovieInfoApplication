@@ -54,11 +54,11 @@
             android:layout_height="wrap_content"
             tools:text="running time"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detailImage"
+            app:layout_constraintTop_toBottomOf="@id/detailTitleText"
             android:layout_margin="10dp"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:text="@{movieDetail.runtime}"
+            android:setRunningTime="@{movieDetail.runtime}"
             />
 
         <androidx.appcompat.widget.AppCompatTextView

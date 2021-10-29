@@ -30,7 +30,7 @@ class DetailViewModel(private val detailiMovieUseCase: DetailiMovieUseCase,
     fun fetchDetail(movie : Movie){
         viewModelScope.launch {
             launch {
-                queryFavoriteMovieUseCase.invoke(movie).collectLatest {
+                queryFavoriteMovieUseCase(movie).collectLatest {
                     it?.let {
                        _movieFavorite.value = true
                     }
@@ -51,7 +51,7 @@ class DetailViewModel(private val detailiMovieUseCase: DetailiMovieUseCase,
                 insertMovieUseCase.invoke(movie)
                 _movieFavorite.value == true
             } else{
-                deleteMovieUseCase.invoke(movie)
+                deleteMovieUseCase(movie)
                 _movieFavorite.value = false
             }
         }

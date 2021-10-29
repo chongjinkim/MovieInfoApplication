@@ -15,7 +15,7 @@ class Client(private val gSon : Gson) {
 
 
     private val httpLogLevel
-        get() = if(BuildConfig.DEBUG) HttpCustomLoggingInterceptor.Level.BODY else HttpCustomLoggingInterceptor.Level.NONE
+        get() = if(com.soomgo.movieinfoapplication.BuildConfig.DEBUG) HttpCustomLoggingInterceptor.Level.BODY else HttpCustomLoggingInterceptor.Level.NONE
 
     fun createClient(host : String = USER_BASE_URL)  : Retrofit{
         val okHttpClient = OkHttpClient.Builder()
